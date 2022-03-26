@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import Layout from './components/layout/Layout';
+import User from './components/Users/User';
+import UserList from './components/Users/UserList';
+import { Route, Routes, Navigate } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<User/>} />
+          <Route path="users" element={<UserList/>} />
+        </Routes>
+      </Layout>
+    </Fragment>
   );
 }
 

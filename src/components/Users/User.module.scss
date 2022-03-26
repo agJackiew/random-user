@@ -1,0 +1,129 @@
+@import "../../styles/main";
+
+.user {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 1.1rem;
+	transition: transform .2s;
+
+
+	&__label {
+		color: $color-grey-dark;
+		margin-right: .5rem;
+	}
+
+
+	&__info {
+		width: 60%;
+		display: flex;
+		flex-direction: column;
+		text-transform: uppercase;
+
+		& > * {
+			padding: 1rem;
+			border-bottom: 1px solid rgba($color-pri-2, .5);
+			color: $color-pri-2;
+		}
+	}
+
+	&__img {
+		width: 40%;
+		@include centerY;
+
+		img {
+			width: 10rem;
+			height: 10rem;	
+			border: 2px solid $color-white;	
+			border-radius: 50%;
+			box-shadow: .3rem .3rem 1.2rem .1rem rgba($color-grey-dark, .5);
+		}
+
+		figcaption {
+			text-align: center;
+			font-size: 1rem;
+			margin-top: 2rem;
+			padding: 1rem 0rem;
+		}
+	}
+
+	@media only screen and (max-width: 767px) {
+		flex-direction: column;	
+
+		&__info {
+			width: 100%;
+
+			& > * {
+				padding: 0.3rem;
+			}
+		}
+
+		&__img {
+			width: 100%;
+		}
+	}
+}
+
+.actions {
+	@include centerX;
+}
+
+.add {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0;
+	margin-top: 1rem;
+	font-size: 1.1rem;
+	font-weight: 400;
+	text-transform: uppercase;
+
+		&__yes-icon {
+			cursor: pointer;
+			color: $color-green-light;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&__span-yes {
+			margin: 0 .5rem;
+			text-align: center;
+			color: $color-green-light;
+		}
+
+		&__no-icon, 
+		&__span-no {
+			color: $color-orange-dark;
+		}
+
+		&__span-yes,
+		&__span-no {
+			@media only screen and (max-width: 767px) {
+			font-size: .8rem;
+		}
+		}
+
+	}
+
+.hand {
+	padding: 0 .3rem;
+	font-size: 1.5rem;
+    animation: shake infinite 1s linear;
+  }
+
+@keyframes shake {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}

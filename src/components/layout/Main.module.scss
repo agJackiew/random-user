@@ -1,0 +1,16 @@
+@import "../../styles/main";
+
+.main {
+	width: 100vw;
+	min-height: 100vh;
+	padding-top: 10rem; 
+	margin-top: 8rem;
+
+	@media only screen and (max-width: 767px) {
+		padding-top: 2rem; 
+	}
+}	
+
+
+
+   

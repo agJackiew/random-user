@@ -1,0 +1,32 @@
+@import "../../styles/main";
+
+.button {
+  background-color: $color-pri-2 ;
+  color: $color-grey-lightest;
+  border: none;
+ 
+  margin: 3rem;
+  padding: 2rem 4rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: .2rem;
+  border-radius: 3rem;
+  box-shadow: .3rem .3rem 1.2rem .1rem rgba($color-pri-1, .2);
+
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: $color-pri-2;
+    background-color: rgba($color-white, .7);
+  }
+
+  &__text {
+    text-transform: uppercase;
+  }
+
+  @media only screen and (max-width: 767px) {
+    margin: 3rem;
+    padding: 1.3rem 2rem;
+  }
+}

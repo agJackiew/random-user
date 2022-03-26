@@ -1,0 +1,30 @@
+@import "../../styles/main";
+
+.user {
+	transition: transform .2s;
+
+	& > * {
+		color: $color-pri-1;
+
+	}
+
+	&__name {
+		width: 50%;
+	}
+
+	&__country {
+		width: 40%;
+	}
+
+	&__remove {
+		width: 10%;
+		text-align: center;
+		color: $color-orange-dark;
+		font-size: 1.5rem;
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+	}
+}

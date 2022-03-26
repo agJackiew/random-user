@@ -1,0 +1,31 @@
+@import "../../styles/main";
+
+.card {
+  @include centerY;
+  margin: 1rem auto;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: .3rem .3rem 1.2rem .1rem rgba($color-pri-1, .2);
+  color: $color-grey-dark;
+  width: 40%;
+
+  & > * {
+    display: flex;
+    width: 100%;
+    color: $color-grey-dark;
+    border-radius: 10px;
+
+    & > * {
+      padding: 0 2rem;
+      margin: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .card {    
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
