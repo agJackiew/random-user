@@ -5,8 +5,7 @@ import Card from '../ui/Card';
 import LoadingSpinner from '../ui/LoadingSpinner';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserData } from '../../store/user-actions';
-import { userListActions } from '../../store/userList-slice'; 
-import { uiActions } from '../../store/ui-slice'; 	
+import { userListActions } from '../../store/userList-slice'; 	
 import Dummy from '../../assets/dummy-avatar.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
@@ -19,11 +18,12 @@ const User = () => {
 
 	const user = useSelector(state => state.user.user);
 
-	const isAdded = useSelector(state => state.ui.isAdded);
+	const users = useSelector(state => state.usersList.users);
 
+	const isAdded = users.find(item => item.id === user.id) ? true : false;
+	
 	const generateUserHandler = () => {
 		dispatch(fetchUserData());
-		dispatch(uiActions.setAddedFalse());
 	}
 
 	const addUserHandler = () => {
@@ -33,7 +33,6 @@ const User = () => {
 			lastName: user.lastName,
 			country: user.address.country,
 		}));
-		dispatch(uiActions.toggleAdded());
 	}
 
 	return (
@@ -90,5 +89,3 @@ const User = () => {
 }
 
 export default User;
-
-/**/

@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import store from './store/index';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename={'/random-user'}>
     <Provider store={store}>
       <App />
     </Provider> 

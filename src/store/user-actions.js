@@ -1,8 +1,10 @@
 import { userActions } from './user-slice';
+import { v4 as uuidv4 } from 'uuid';
 
 const url = "https://randomuser.me/api/?inc=name,picture,nat,registered,location";
 
-export const fetchUserData = () => {
+export const fetchUserData = () => {	
+
 	return async (dispatch) => {
 		const fetchData = async () => {
 			const response = await fetch(url);
@@ -20,7 +22,7 @@ export const fetchUserData = () => {
 
 			console.log(userData);
 			dispatch(userActions.getUser({
-				id: Date.now().toString(),
+				id: uuidv4(),
 				firstName: userData.name.first,
 				lastName: userData.name.last,
 				nationality: userData.nat,

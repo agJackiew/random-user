@@ -1,7 +1,6 @@
 import styles from './UserListItem.module.scss';
 import { useDispatch } from 'react-redux';
 import { userListActions } from '../../store/userList-slice';
-import { uiActions } from '../../store/ui-slice'; 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUserMinus} from "@fortawesome/free-solid-svg-icons";
 
@@ -13,7 +12,6 @@ const UserListItem = (props) => {
 
 	const removeUserHandler = () => {
 		dispatch(userListActions.removeUserFromList(id));
-		dispatch(uiActions.toggleAdded());
 	}
 
 	return (
