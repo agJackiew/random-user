@@ -5,17 +5,17 @@ import UserList from './components/Users/UserList';
 import { Route, Routes, Navigate } from 'react-router-dom'
 
 function App() {
+
   return (
     <Fragment>
       <Layout>
         <Routes>
           <Route path="/" element={<User/>} />
-          <Route path="/random-user" element={<User/>} />
-          <Route path="/users" element={<UserList/>} />
-          {/*<Route
+          <Route path={"/users"} element={<UserList/>} />
+          <Route
               path="*"
-              element={<Navigate to="/random-user" />}
-          />*/}
+              element={<Navigate to="/" />}
+          />
         </Routes>
       </Layout>
     </Fragment>
