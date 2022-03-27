@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+	const stored = localStorage.getItem('storedUsers');
+	const storedValue = JSON.parse(stored);
+
 const initialState = {
-	users: []
+	users: storedValue || []
 }
 
 const userListSlice = createSlice({
@@ -11,7 +14,6 @@ const userListSlice = createSlice({
 		addUserToList(state, action) {
 			if (state.users.length < 10) {
 				const newUser = action.payload;
-				console.log(newUser);
 				const existingUser = state.users.find(item => item.id === newUser.id);
 				if (!existingUser) {
 					state.users.push(newUser)
@@ -35,6 +37,9 @@ const userListSlice = createSlice({
 		removeUserFromList(state, action) {
 			const id = action.payload;
 			state.users = state.users.filter(item => item.id !== id);
+		},
+		removeAllUsers(state, action) {
+			state.users.length = 0;
 		}
 	}
 })

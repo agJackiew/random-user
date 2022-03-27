@@ -8,6 +8,11 @@
 	font-size: 1.4rem;
 }
 
+.tooltip {
+	background-color: rgba($color-orange-dark, .7) !important;
+	border-radius: 8px;
+}
+
 .users {
 
 	flex-direction: column;
@@ -21,6 +26,16 @@
 		@media only screen and (max-width: 767px) {
 			padding: 1.6rem 1.3rem;
 			font-size: 1rem;
+		}
+	}
+
+	&__remove {
+		text-align: center;
+		font-size: 1.6rem;
+
+		&:hover {
+			cursor: pointer;
+			transform: scale(1.1);
 		}
 	}
 

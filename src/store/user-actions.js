@@ -19,8 +19,6 @@ export const fetchUserData = () => {
 
 		try {
 			const userData = await fetchData();
-
-			console.log(userData);
 			dispatch(userActions.getUser({
 				id: uuidv4(),
 				firstName: userData.name.first,

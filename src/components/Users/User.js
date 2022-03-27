@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Fragment, Suspense } from 'react';
 import styles from './User.module.scss';
 import Button from '../ui/Button';
 import Card from '../ui/Card';
@@ -50,17 +50,20 @@ const User = () => {
 						<div><span className={styles.user__label}>registration date: </span><span>{user.regDate}</span></div>
 						<div>
 							<span className={styles.user__label}>address:</span> 
-							<p>{user.address.street.name + '\n' + user.address.street.number}</p>		
-							<p>{user.address.city + '\n' + user.address.state}</p>
-							<p>{user.address.postcode + '\n' + user.address.country}</p>			
+							{user.id && <Fragment>
+								<p>{user.address.street.name + '\n' + user.address.street.number}</p>		
+								<p>{user.address.city + '\n' + user.address.state}</p>
+								<p>{user.address.postcode + '\n' + user.address.country}</p>
+							</Fragment>}
+										
 						</div>
 					</div>	
 					<figure className={styles['user__img']}>
 						<img src={user.image ? user.image : Dummy} alt="user" className={styles.user__photo}/>
-						<figcaption>
+						{user.id && <figcaption>
 							<span>Hi, I am {user.firstName}!&nbsp;</span>
 							<FontAwesomeIcon icon={faHand} className={styles.hand} color='#90E0EF' />
-						</figcaption>
+						</figcaption>}
 						
 					</figure>	
 				</div>
