@@ -1,5 +1,13 @@
 @import "../../styles/main";
 
+.empty {
+	padding: 1rem;
+	@include centerY;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 1.4rem;
+}
+
 .users {
 
 	flex-direction: column;
