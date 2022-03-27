@@ -35,8 +35,8 @@ const Header = (props) => {
       <nav className={styles.header__nav}>
         <ul className={styles.header__ul}>
           <li>
-            {(path === '/users') && <Link to='/' className={`${styles['header__link']} ${transparent && styles['header__link--transparent']}`}>Generate User</Link>}
-            {(path === '/') && <Link to='/users' className={`${styles['header__link']} ${transparent && styles['header__link--transparent']}`}>
+            {(path === '/users') && <Link to='/random-user' className={`${styles['header__link']} ${transparent && styles['header__link--transparent']}`}>Generate User</Link>}
+            {(path === '/random-user') && <Link to='/users' className={`${styles['header__link']} ${transparent && styles['header__link--transparent']}`}>
               <span>My users</span>
               <span>{users.length}</span>
             </Link>}
@@ -50,8 +50,8 @@ const Header = (props) => {
         {navMob && 
           <ul className={styles.header__ul}>
             <li className={styles.header__li}>
-              {(path === '/users') && <Link to='/' className={`${styles['header__link']}`} onClick={() => setNavMob(false)}>Generate User</Link>}
-              {(path === '/') && <Link to='/users' className={`${styles['header__link']}`} onClick={() => setNavMob(false)}>
+              {(path === '/users') && <Link to='/random-user' className={`${styles['header__link']}`} onClick={() => setNavMob(false)}>Generate User</Link>}
+              {(path === '/random-user') && <Link to='/users' className={`${styles['header__link']}`} onClick={() => setNavMob(false)}>
                 <span>My users</span>
                 <span>{users.length}</span>
               </Link>}

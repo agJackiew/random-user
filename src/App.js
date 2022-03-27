@@ -9,8 +9,12 @@ function App() {
     <Fragment>
       <Layout>
         <Routes>
-          <Route path="/" element={<User/>} />
-          <Route path="users" element={<UserList/>} />
+          <Route path="/random-user" element={<User/>} />
+          <Route path="/users" element={<UserList/>} />
+          <Route
+              path="*"
+              element={<Navigate to="/random-user" />}
+          />
         </Routes>
       </Layout>
     </Fragment>
