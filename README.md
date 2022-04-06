@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is training project created to test fetching data with Redux and Redux toolkit as well as routing with React Router v6. 
+This is training project created to test fetching and displaying data with Redux and Redux toolkit as well as routing with React Router v6. 
 
 
 You can generate random user with data from https://randomuser.me/ and store max 10 chosen users' basic information.
