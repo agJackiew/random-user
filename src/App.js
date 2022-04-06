@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+/*import React, { Fragment } from 'react';
 import Layout from './components/layout/Layout';
-import User from './components/Users/User';
-import UserList from './components/Users/UserList';
+import User from './components/users/User';
+import UserList from './components/users/UserList';
 import { Route, Routes, Navigate } from 'react-router-dom'
 
 function App() {
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
